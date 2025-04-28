@@ -1,0 +1,61 @@
+{% extends "baotang/layout.html" %}
+{% load static %}
+
+{% block map %}
+<!-- Load Leaflet CSS từ CDN -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+<!-- Load Fullscreen Plugin CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.min.css" />
+
+<!-- Load thêm Roboto font -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<!-- Load CSS custom -->
+<link rel="stylesheet" href="{% static 'museums/css/style1.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Chia giao diện 2 cột: Bài viết và Bản đồ -->
+<div style="display: flex; min-height: 100vh;">
+    <!-- Cột trái: Bài viết -->
+    <div id="article-container">
+        <!-- Các bài viết sẽ render động -->
+    </div>
+
+    <!-- Cột phải: Bản đồ -->
+    <div id="map">
+        <!-- Thanh tìm kiếm -->
+        <input id="searchInput" type="text" placeholder="🔍 Tìm bảo tàng..." class="search-box">
+
+        <!-- Vùng suggestions -->
+        <ul id="suggestions"></ul>
+
+        <!-- Sidebar Buttons -->
+        <div id="sidebar-buttons" class="sidebar">
+            <button id="locateBtn" class="custom-btn">📍 Vị trí</button>
+            <button id="fitBoundsBtn" class="custom-btn">🗟️ Bảo tàng</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<!-- Load Leaflet JS từ CDN -->
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+<!-- Load Fullscreen Plugin JS (sau khi Leaflet đã load) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.min.js"></script>
+
+<!-- Khởi tạo map -->
+<script src="{% static 'museums/js/simple.js' %}"></script>
+
+<!-- Load markers + articles -->
+<script src="{% static 'museums/js/museum_markers.js' %}"></script>
+
+<!-- Lấy vị trí hiện tại -->
+<script src="{% static 'museums/js/location_button.js' %}"></script>
+
+<!-- Tìm kiếm nội bộ -->
+<script src="{% static 'museums/js/search_location.js' %}"></script>
+{% endblock %}
