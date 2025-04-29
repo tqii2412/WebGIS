@@ -8,6 +8,9 @@ from .serializers import MuseumSerializer
 def home_view(request):
     return render(request, 'baotang/home.html')
 
+def about_view(request):
+    return render(request, 'baotang/about.html')
+
 
 # API view
 class MuseumViewSet(viewsets.ModelViewSet):

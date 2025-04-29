@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .addTo(map);
 
         const circle = L.circle([e.latitude, e.longitude], {
-            radius: e.accuracy / 1,
+            radius: e.accuracy / 2,
             weight: 10,
             color: "blue",
             fillColor: "blue",

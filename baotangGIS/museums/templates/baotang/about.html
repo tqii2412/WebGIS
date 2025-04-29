@@ -1,0 +1,35 @@
+{% extends "baotang/layout.html" %}
+{% load static %}
+
+{% block map %}
+
+{% endblock %}
+
+{% block content %}
+<section class="hero-section" style="
+    background: url('{% static 'museums/images/hero.png' %}') center/cover no-repeat;
+    background-attachment: fixed; /* Tạo hiệu ứng parallax nhẹ khi cuộn */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+">
+    <div style="max-width: 1000px; background-color: rgba(0, 0, 0, 0.5); padding: 3rem; border-radius: 10px;">
+        <h1 style="font-size: 3rem; margin-bottom: 2rem;">Giới thiệu về Bảo Tàng Lão Làng</h1>
+        <p style="font-size: 1.3rem; margin-bottom: 2rem;">
+            Bảo Tàng Lão Làng là nơi tôn vinh lịch sử, lưu giữ những ký ức vàng son của Miền Đông Nam Bộ nói riêng và Việt Nam nói chung.
+            Chúng tôi mong muốn mang đến cho cộng đồng những trải nghiệm chân thực, sống động qua các hiện vật quý giá, tư liệu lịch sử và không gian trưng bày sáng tạo.
+        </p>
+        <p style="font-size: 1.3rem; margin-bottom: 2rem;">
+            Đặt tại trung tâm TP.HCM, bảo tàng không chỉ là địa điểm tham quan hấp dẫn mà còn là nơi học tập, nghiên cứu và kết nối văn hóa cho mọi thế hệ.
+        </p>
+        <p style="font-size: 1.3rem;">
+            Với phương châm "Giữ gìn giá trị - Kết nối tương lai", Bảo Tàng Lão Làng sẽ không ngừng đổi mới và phát triển để trở thành điểm tựa văn hóa tinh thần cho cộng đồng.
+        </p>
+    </div>
+</section>
+{% endblock %}

@@ -7,6 +7,7 @@ router = DefaultRouter()
 router.register(r'api/museums', views.MuseumViewSet, basename='museum')
 
 urlpatterns = [
-    path('', views.home_view, name='home'),  # Frontend home.html
+    path('', views.home_view, name='home'),
+    path('about/', views.about_view, name='about'),
     path('', include(router.urls)),          # API endpoints tự sinh
 ]
